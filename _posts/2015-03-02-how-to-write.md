@@ -13,9 +13,6 @@ $\text{Segment Tree beats }$是势能线段树的全称，泛指这种在某些�
 
 虽然以前会一点，但是根本没做啥题，记一些题在此篇。
 
----
-
-
 [CF1572F Stations](https://www.luogu.com.cn/problem/CF1572F)
 
 $\text{diff:3300}$
@@ -33,9 +30,6 @@ $\text{diff:3300}$
 单点修改就是看改长了还是改短了，进行区间加/减即可。
 
 时间复杂度  $O((n+q) \log ^2 n )$  。
-
----
-
 
 [P4198楼房重建](https://www.luogu.com.cn/problem/solution/P4198) 
 
@@ -57,8 +51,6 @@ $\text{diff:2800}$（目测）
 
 时间复杂度 $O(n + q\log n)$ ，实际运行速度略快于 $O(n + q\log^2n)$ 做法。
 
----
-
 NowCoder7615D 
 
 $\text{diff:3000+}$
@@ -73,7 +65,7 @@ $f(i) :  $  1~i 中 i 结尾的极长上升子序列的个数 。
 
 那么：
 
-$f(i) = \sum_{j<i}f(j) [a_j<a_i ,\text{j和i之间不存在 ak > aj}]$ 。
+$f(i) = \sum_{j<i}f(j) [a_j<a_i ,\forall k>j , a_k < a_j] $ 。
 
 我没有考虑这个dp如何优化，其实只用在值域上建 $\text{Segment Tree beats }$ +  $\text{set}$ 就可以大力维护了。
 
@@ -85,11 +77,15 @@ $f(i) = \sum_{j<i}f(j) [a_j<a_i ,\text{j和i之间不存在 ak > aj}]$ 。
 
 并且每个点自加入后可以转移的范围是单调不加的 ， 且是一个区间中未加入的数。（只被取 $\min$ ）。
 
-于是进行的操作就是对前面点$[1,inv_i - 1]$ 进行区间取 $\min$ ， 以及查询可以覆盖到这个点的权值和。
+于是进行的操作就是对前面点 $[1,inv_i - 1]$ 进行区间取 $\min$ ， 以及查询可以覆盖到这个点的权值和。
 
 于是你就把一道差不多 $\text{diff 3000}$ 的题转化成了 差不多 $\text{diff 3300}$ 题啦。。。。
 
 就像上面的第一题一样，用 $\text{Segment Tree beats }$ 套树状数组就可以解决了。
+
+
+
+
 
 
 

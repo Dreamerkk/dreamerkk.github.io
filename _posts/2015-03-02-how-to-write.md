@@ -29,7 +29,7 @@ $\text{diff:3300}$
 
 单点修改就是看改长了还是改短了，进行区间加/减即可。
 
-时间复杂度  $O((n+q) \log ^2 n )$  。
+时间复杂度  $O((n+q) \log^2 n )$  。
 
 [P4198楼房重建](https://www.luogu.com.cn/problem/solution/P4198) 
 
@@ -65,7 +65,7 @@ $f(i) :  $  1~i 中 i 结尾的极长上升子序列的个数 。
 
 那么：
 
-$f(i) = \sum_{j<i}f(j) [a_j<a_i ,\forall k>j , a_k < a_j] $ 。
+$f(i) = \sum_{j<i}f(j) [a_j<a_i ,\forall i<j<k , a_k < a_j] $ 。
 
 我没有考虑这个dp如何优化，其实只用在值域上建 $\text{Segment Tree beats }$ +  $\text{set}$ 就可以大力维护了。
 
